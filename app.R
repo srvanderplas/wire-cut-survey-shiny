@@ -42,8 +42,9 @@ consent_panel <- tabPanel(
 instructions_panel <- tabPanel(
   title = "Instructions",
   id = "instruction_tab",
+  tags$head(includeHTML("instructions-head.html")),
   fluidRow(
-    column(width = 10, offset = 1, includeMarkdown("instructions.md"))
+    column(width = 10, offset = 1, includeHTML("instructions.html"))
   )
 )
 
@@ -96,8 +97,6 @@ server <- function(input, output, session) {
       consent$btn <- "Decline"
       shinyjs::runjs(paste0('window.location.href = "https://reddit.com/r/DIY/";'))
   })
-
-
 
 
 }

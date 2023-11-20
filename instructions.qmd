@@ -1,0 +1,64 @@
+---
+format: html
+---
+
+This project will help us assess the likelihood of a random tool matching a wire of a given gauge/diameter in evidence, and to examine the probability that an innocent person is accused of committing a crime on the basis of such a match.
+
+## Tool Inclusion Criteria
+
+To participate, collect any tools you have that you might use to cut a wire under normal circumstances.
+
+We surveyed our workbench (@fig-shop-layout) and pulled out tools we'd used to cut wires (whether or not the were intended for that purpose) in the past[^1]. In some cases, this includes tools such as scissors or even cat/dog nail clippers. The criteria here is whether you would use the tool to cut a wire in a DIY project.
+
+[^1]: If you like to improvise, then for the purposes of this study, please don't include things like rocks or teeth (both examples from a friend) - pretend you're a sensible person and not an engineer in a rush.
+
+::: {#fig-shop-layout layout-ncol="2"}
+![Workbench and tool storage](shop-1.jpg){fig-width="30%"}
+
+![Side of workbench - more tools](shop-2.jpg){fig-width="30%"}
+
+It is fine to only measure available tools - e.g. the ones that are easily located. There is no need to go digging to find every tool - this is an estimation task.
+:::
+
+## Background Information
+
+### Toolmarks
+
+During a forensic investigation, investigators may look at microscopic imperfections in a surface left by the use of a tool (e.g. crowbar, bolt cutters, etc.). These marks often take the form of striations - little lines that are on the surface of the mark. A macroscopic example that is more relatable is when you spread butter or jam on toast, the butter knife often leaves little grooves behind in the spread[^2].
+A 3D scan of a cut wire is shown in @fig-wire-striae; striations are visible along the wire surface. 
+
+[^2]: This is what is known as a **class characteristic**, incidentally - most butter knives in a set have similar groove patterns, but if one of the knives has been damaged (say, caught in the garbage disposal), it will leave a different pattern than the other knives because it has **individual characteristics** that were introduced later.
+
+![Striations on the surface of a cut wire.](wire-striae.png){#fig-wire-striae fig-width="50%"}
+
+
+Cutting surfaces can leave different striations depending on where the wire or metal contacted the cutting blade. As a result, in order to compare something small like a wire to a tool, a forensic examiner must make comparisons along the entire surface of the tool's cutting edges. 
+
+## Cutting Surfaces
+
+Most tools have at least 2 cutting edges; some may have 4. @fig-tool-surfaces shows some common configurations of tool blades along with example tools that have that configuration. It is important to record both the length of the blade/cutting surface and the number of cutting surfaces for this study, as examiners would have to compare all lengths of all cutting surfaces to determine whether the tool was used to make the mark recovered from the crime scene.
+
+
+![Different tool configurations. On the top row, there are cross-sectional shapes representing the blades; each cutting surface that will leave a residual mark on the cut material is numbered. On the bottom, tehre are examples of tools with this configuration of blades (note that not all similar looking tools are necessarily configured the same).](surface-counts.png){#fig-tool-surfaces}
+
+
+## Data Collection Steps:
+
+1.  Gather tools which can be used for wire cutting from your house and shop.
+
+2.  In the next tab, you will record the following information for each type of tool:
+
+    -   tool type/description (e.g. "pliers", "needlenose pliers", "wire strippers")
+
+    -   blade length in cm
+
+    -   number of cutting surfaces on the tool
+
+    -   number of tools (if you have more than one of the same approximate type/size).
+
+3.  When you are finished recording your tools, hit the Submit button to save your data to the database.
+
+Thank you so much for your help!
+
+
+---

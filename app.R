@@ -15,26 +15,37 @@ consent_panel <- tabPanel(
   title = "Consent",
   id = "consent_tab",
   fluidRow(
-    column(width = 10, offset = 1,
-           includeMarkdown("consent.md")
-    )
+    column(width = 2),
+    column(width = 8,
+           includeMarkdown("consent.md")),
+    column(width = 2)
   ),
   fluidRow(
-    column(width = 2, offset = 2,
-           actionButton("consentbtn", "I Agree", icon = icon("screwdriver-wrench"), class = "btn-success")),
-
-    column(width = 2, offset = 4,
-           a("I Do Not Agree", icon = icon("xmark"), class = "btn btn-danger", href = "https://reddit.com/r/DIY"))
+    column(width = 2), # margin
+    column(width = 8,
+           fluidRow(
+             column(
+               width = 2, offset = 2,
+               actionButton("consentbtn", "I Agree", icon = icon("screwdriver-wrench"), class = "btn-success")
+             ),
+             column(
+               width = 2, offset = 4,
+               a("I Do Not Agree", icon = icon("xmark"), class = "btn btn-danger", href = "https://reddit.com/r/DIY")
+             )
+           )),
+    column(width = 2) # margin
   ),
   fluidRow(
+    column(width = 2),
     column(
-      width = 4, offset = 1,
+      width = 2, offset = 1,
       helpText("Click here if you agree; you will be automatically redirected to the instructions.")
     ),
     column(
-      width = 4, offset = 2,
+      width = 2, offset = 2,
       helpText("Click here to decline to participate. You will be redirected to Reddit.")
-    )
+    ),
+    column(width = 2)
   )
 )
 
@@ -42,9 +53,8 @@ consent_panel <- tabPanel(
 instructions_panel <- tabPanel(
   title = "Instructions",
   id = "instruction_tab",
-  tags$head(includeHTML("instructions-head.html")),
   fluidRow(
-    column(width = 10, offset = 1, includeHTML("instructions.html"))
+    column(width = 10, offset = 1, includeHTML("www/instructions.html"))
   )
 )
 
@@ -86,10 +96,8 @@ server <- function(input, output, session) {
 
     shinyjs::enable(selector = '.navbar-nav a[data-value="Instructions"')
 
-    updateNavbarPage(
-      inputId = "tab",
-      selected = "Instructions"
-    )
+    updateNavbarPage(session, "tab", tab_id[2])
+
   })
 
   observeEvent(input$declinebtn, {

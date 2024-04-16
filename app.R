@@ -58,9 +58,22 @@ instructions_panel <- tabPanel(
   )
 )
 
-data_panel <- tabPanel(
-  title = "Data Entry",
-  id = "data_tab"
+wirecut_panel <- tabPanel(
+  title = "Wire Cutters",
+  id = "wirecut_tab",
+  fluidRow(
+    column(width = 10, offset = 1, rHandsontableOutput("wirecut"))
+  ),
+  fluidRow(column(width = 1, offset = 10, actionButton("saveWirecutBtn", label = "Save Wire Cutter Data")))
+)
+
+pry_panel <- tabPanel(
+  title = "Prying Tools",
+  id = "pry_tab",
+  fluidRow(
+    column(width = 10, offset = 1, rHandsontableOutput("pry"))
+  ),
+  fluidRow(column(width = 1, offset = 10, actionButton("savePryBtn", label = "Save Prying Tools Data")))
 )
 
 completion_panel <- tabPanel(
@@ -68,33 +81,89 @@ completion_panel <- tabPanel(
   id = "completion_tab"
 )
 
-# Define UI for application that draws a histogram
 ui <- navbarPage(
-  title = "Wire Cutting Tools Survey",
+  title = "DIY Tool Survey",
   id = "tab",
   header = useShinyjs(),
   consent_panel,
   instructions_panel,
-  data_panel,
+  wirecut_panel,
+  pry_panel,
   completion_panel
 )
 
 # Define server logic required to draw a histogram
 server <- function(input, output, session) {
   # disable tabs Instructions, Data Entry
-  shinyjs::disable(selector = '.navbar-nav a[data-value="Instructions"')
-  shinyjs::disable(selector = '.navbar-nav a[data-value="Data Entry"')
-  shinyjs::disable(selector = '.navbar-nav a[data-value="Study Completion"')
+  shinyjs::disable(selector = '.navbar-nav a[data-value="Instructions"]')
+  shinyjs::disable(selector = '.navbar-nav a[data-value="Wire Cutters"]')
+  shinyjs::disable(selector = '.navbar-nav a[data-value="Prying Tools"]')
+  shinyjs::disable(selector = '.navbar-nav a[data-value="Study Completion"]')
 
-  tab_id <- c("Consent", "Instructions", "Data Entry", "Completion")
+  tab_id <- c("Consent", "Instructions", "Wire Cutters", "Prying Tools", "Completion")
 
   consent <- reactiveValues(time = NA, btn = NA)
+
+
+  observe({
+    # remove button and isolate to update file automatically
+    # after each table change
+    input$saveWirecutBtn
+    wirecut = isolate(input$wirecut)
+    if (!is.null(wirecut)) {
+      # write.csv(hot_to_r(input$hot), fname) # Save data to table
+      # print(fname)
+    }
+  })
+
+  output$wirecut <- renderRHandsontable({
+    if (!is.null(input$wirecut)) {
+      DF = hot_to_r(input$wirecut)
+    } else {
+      DF = data.frame("Tool Description" = c("Example: Scissors", rep("", 10)),
+                      "Blade Length (cm)" = c(8, rep(0, 10)),
+                      "Num Cutting Surfaces" = c(4, rep(0, 10)),
+                      "Count" = NA_integer_, check.names = F)
+    }
+
+    rhandsontable(DF, colHeaders = c("Tool Description", "Blade Length (cm)", "Num Cutting Surfaces", "Count"),
+                  width = "100%") %>%
+      hot_col("Num Cutting Surfaces", format = "0") %>%
+      hot_col("Count", format = "0") %>%
+      hot_row(1, readOnly = T)
+  })
+
+
+
+  observe({
+    # remove button and isolate to update file automatically
+    # after each table change
+    input$savePryBtn
+    pry = isolate(input$pry)
+    if (!is.null(pry)) {
+      # write.csv(hot_to_r(input$hot), fname) # Save data to table
+      # print(fname)
+    }
+  })
+
+  output$pry <- renderRHandsontable({
+    if (!is.null(input$pry)) {
+      DF = hot_to_r(input$pry)
+    } else {
+      DF = data.frame("Tool Description", "Surface Length (cm)", "Claw Length (cm)", check.names = F)
+    }
+
+    rhandsontable(DF)
+  })
+
 
   observeEvent(input$consentbtn, {
     consent$time <- min(consent$time, Sys.time(), na.rm = T)
     consent$btn <- "Consent"
 
-    shinyjs::enable(selector = '.navbar-nav a[data-value="Instructions"')
+    shinyjs::enable(selector = '.navbar-nav a[data-value="Instructions"]')
+    shinyjs::enable(selector = '.navbar-nav a[data-value="Wire Cutters"]')
+    shinyjs::enable(selector = '.navbar-nav a[data-value="Prying Tools"]')
 
     updateNavbarPage(session, "tab", tab_id[2])
 

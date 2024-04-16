@@ -1,0 +1,9 @@
+project:
+  output-dir: www
+
+
+self-contained: false
+
+format:
+  html:
+    template: template.html

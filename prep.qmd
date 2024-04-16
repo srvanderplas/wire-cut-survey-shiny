@@ -1,0 +1,60 @@
+---
+title: "Background and Preparation"
+format: html
+---
+
+## Background Information
+
+During a forensic investigation, investigators may look at microscopic imperfections in a surface left by the use of a tool (e.g. crowbar, bolt cutters, etc.). 
+These marks often take the form of striations - little lines that are on the surface of the mark. 
+A common macroscopic example of striations are the lines left behind when you spread butter or jam on toast.
+A 3D scan of a cut wire is shown in @fig-wire-striae; striations are visible along the wire surface. 
+
+![Striations on the surface of a cut wire.](fig/wire-striae.png){#fig-wire-striae width="50%"}
+
+
+Tools can leave different striations depending on where and how the material contacts the tool. 
+As a result, in order to compare a mark to a tool, a forensic examiner must make comparisons along the entire surface of the tool's edge. 
+This study aims to understand exactly how much comparison material individuals might have at home under normal circumstances. 
+In an investigation, examiners would have to assess all of the tools in someone's possession in order to link them to evidence at the crime scene.
+
+
+
+
+## Preparation
+
+Collect any tools you have that you might use under normal circumstances to: 
+
+1. cut a wire, or
+2. pry two things apart (for example, open a jammed door)
+
+For instance, surveying @fig-shop-layout, we would include scissors and box cutters under item 1, and we might include hammers under item 2. 
+The metric is whether *you, personally* would use this tool under a *normal* (e.g. not an emergency) situation to accomplish the stated task. 
+It does not matter whether the tool is intended for the task.
+
+::: {#fig-shop-layout layout-ncol="2"}
+
+![Workbench and tool storage](fig/shop-1.jpg){fig-width="30%"}
+
+![Side of workbench - more tools](fig/shop-2.jpg){fig-width="30%"}
+
+A messy garage workbench and tool storage area. Locating only easily available tools is sufficient for this task.
+:::
+
+In some situations, this may include tools such as cat/dog nail clippers, chisels, or wire strippers. 
+If you like to improvise, then for the purposes of this study, please **don't** include things like rocks or teeth (both examples from a friend) - pretend you're a sensible person and not an engineer in a hurry.
+
+
+It is fine to only measure available or easily located tools - this is an estimation task.
+@fig-tool-examples shows tools which might be used for each of the two tasks, assembled from those easily located in the workspace shown in @fig-shop-layout.
+
+
+::: {#fig-tool-examples layout-ncol=2}
+
+![Tools used to cut wires](fig/cutting-tools-assembled.png)
+
+![Tools used for prying](fig/prying-tools-assembled.png)
+
+Assembled tools used for prying and cutting.
+
+:::

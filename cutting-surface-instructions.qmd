@@ -1,0 +1,25 @@
+---
+title: "Cutting Surfaces"
+format: html
+---
+
+Most cutting tools have at least 2 edges; some may have 4. @fig-tool-surfaces shows some common configurations of tool blades along with example tools that have that configuration. 
+It is important to record both the length of the blade/cutting surface and the number of cutting surfaces for this study, as examiners would have to compare all lengths of all cutting surfaces to determine whether the tool was used to make the mark recovered from the crime scene.
+
+
+![Different tool configurations. On the top row, there are cross-sectional shapes representing the blades; each cutting surface that will leave a residual mark on the cut material is numbered. On the bottom, there are examples of tools with this configuration of blades (note that not all similar looking tools are necessarily configured the same).](fig/surface-counts.png){#fig-tool-surfaces}
+
+
+For each cutting tool, record:
+
+1. a description of the tool (e.g. pliers, scissors, box cutter), 
+2. the blade length in cm, 
+3. the number of cutting surfaces (using @fig-tool-surfaces), and
+4. the number of tools matching this description.
+
+4 is primarily intended for cases where e.g. you have a pack of blades for box cutters, or 10 pairs of the same size scissors. 
+
+You can add new rows by right clicking on the data table. 
+
+When you are finished, double check your data for typos, and press the submit button to save your data to the database. 
+Then, continue on to the next section.

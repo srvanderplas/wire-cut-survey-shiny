@@ -1,0 +1,30 @@
+---
+title: "Prying Surfaces"
+format: html
+---
+
+Many prying tools have multiple ways to use the tool. 
+For the purposes of this study, we are interested in any end of the tool which is intended to push between two surfaces. 
+For these tools, it is important to record the length of each surface separately. An example is shown in @fig-pry-surfaces.
+
+![This tool has three different surfaces configured for prying two objects apart. Each surface should be measured separately.](fig/hammer-pry-surfaces.png){#fig-pry-surfaces width="50%"}
+
+For each prying surface, record:
+
+1. a description of the tool (e.g. hammer, crow bar, flat pry bar), 
+2. the surface length in cm, 
+3. the claw gap length in cm (if applicable)
+
+
+Some tools may have a claw; that is, there may be a gap between two regions, intended for e.g. removing nails. 
+As shown in @fig-measure-claw, measure the length of the full surface in cm as if the claw were not present, and then record the length of the gap for the claw separately.
+If the tool does not have a claw, record 0 for the claw length. 
+
+![Measuring a clawed tool. Measure the entire linear prying surface, including the space where the claw is present. Record the size of the gap as the claw length. If there is no claw, enter 0 as the claw length.](fig/measure-claw.png){#fig-measure-claw width="50%"}
+
+Tools with multiple prying surfaces should occupy multiple rows - one for each surface.
+
+You can add new rows by right clicking on the data table. 
+
+When you are finished, double check your data for typos, and press the submit button to save your data to the database. 
+Then, continue on to the next section.

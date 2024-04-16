@@ -10,10 +10,37 @@
 library(shiny)
 library(rhandsontable)
 library(shinyjs)
+library(xml2)
+library(htmltools)
+
+## Process HTML files and make into txt files
+html_deps <- c("www/prep.html", "www/cutting-surface-instructions.html", "www/prying-surface-instructions.html")
+
+header_info <- function(base, head) {
+  # file.copy(paste0("www/", base, '*'), "www/", overwrite = T)
+  header <- purrr::map(xml_children(head), ~tag(xml_name(.), xml_attrs(.))) %>% as.tags() %>% singleton()
+  tags$head(header)
+}
+
+html_split <- function(fname) {
+
+  base <- basename(fname) %>% tools::file_path_sans_ext() %>% paste0(., "_files/libs/")
+  doc_txt <- readLines(fname, warn = F) %>% stringr::str_remove_all(base) %>% paste(collapse = "")
+  doc <- read_html(doc_txt) %>% xml_children()
+
+  # Need to delete any nodes where src or href matches "bootstrap/"
+
+  list(
+    header_info(base, doc[1]),
+    HTML(as.character(doc[2]))
+    )
+}
+
 
 consent_panel <- tabPanel(
   title = "Consent",
   id = "consent_tab",
+  useShinyjs(),
   fluidRow(
     column(width = 2),
     column(width = 8,
@@ -54,7 +81,7 @@ instructions_panel <- tabPanel(
   title = "Instructions",
   id = "instruction_tab",
   fluidRow(
-    column(width = 10, offset = 1, includeHTML("www/instructions.html"))
+    column(width = 10, offset = 1, html_split("www/prep.html"))
   )
 )
 
@@ -62,18 +89,24 @@ wirecut_panel <- tabPanel(
   title = "Wire Cutters",
   id = "wirecut_tab",
   fluidRow(
-    column(width = 10, offset = 1, rHandsontableOutput("wirecut"))
-  ),
-  fluidRow(column(width = 1, offset = 10, actionButton("saveWirecutBtn", label = "Save Wire Cutter Data")))
+    column(width = 7, html_split("www/cutting-surface-instructions.html")),
+
+    column(width = 5,
+           rHandsontableOutput("wirecut"),
+           actionButton("saveWirecutBtn", label = "Save Wire Cutter Data"))
+  )
 )
 
 pry_panel <- tabPanel(
   title = "Prying Tools",
   id = "pry_tab",
   fluidRow(
-    column(width = 10, offset = 1, rHandsontableOutput("pry"))
-  ),
-  fluidRow(column(width = 1, offset = 10, actionButton("savePryBtn", label = "Save Prying Tools Data")))
+    column(width = 7, html_split("www/prying-surface-instructions.html")),
+
+    column(width = 5,
+           rHandsontableOutput("pry"),
+           actionButton("savePryBtn", label = "Save Prying Tools Data"))
+  )
 )
 
 completion_panel <- tabPanel(
@@ -81,10 +114,13 @@ completion_panel <- tabPanel(
   id = "completion_tab"
 )
 
+header <- list()#HTML(readLines("www/header.html"))
+
+
 ui <- navbarPage(
   title = "DIY Tool Survey",
   id = "tab",
-  header = useShinyjs(),
+  header = header,
   consent_panel,
   instructions_panel,
   wirecut_panel,
@@ -150,10 +186,16 @@ server <- function(input, output, session) {
     if (!is.null(input$pry)) {
       DF = hot_to_r(input$pry)
     } else {
-      DF = data.frame("Tool Description", "Surface Length (cm)", "Claw Length (cm)", check.names = F)
+      DF = data.frame("Tool Description" = c("Example: Hammer", rep("", 10)),
+                      "Surface Length (cm)" = c(3, rep(0, 10)),
+                      "Claw Length (cm)" = c(0.7, rep(0, 10)), check.names = F)
     }
 
     rhandsontable(DF)
+
+    rhandsontable(DF, colHeaders = c("Tool Description", "Surface Length (cm)", "Claw Length (cm)"),
+                  width = "100%") %>%
+      hot_row(1, readOnly = T)
   })
 
 

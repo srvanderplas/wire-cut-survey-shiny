@@ -6,4 +6,4 @@ self-contained: false
 
 format:
   html:
-    template: template.html
+    page-layout: custom

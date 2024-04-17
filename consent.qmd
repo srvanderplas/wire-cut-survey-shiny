@@ -1,0 +1,104 @@
+---
+title: "DIY Tools Forensic Comparisons Survey"
+output: html_document
+---
+
+::: columns
+
+::: column
+
+# Basic Information
+* **IRB Project ID #**: 23338 
+* **Study Title:** DIY Tools Forensic Comparisons Survey
+:::
+
+::: column
+
+![](www/UNL_logo.svg){fig-alt="University of Nebraska Lincoln logo" width="40%"}
+:::
+
+:::
+
+# Research Description
+
+We want to understand the amount of comparisons a forensic examiner might have to perform during an investigation. This will help us to more accurately determine how likely a coincidental match ("false positive") is to occur.
+
+::: columns
+
+::: {.column width="50%"}
+
+&nbsp; | Basic Information
+---- |  ----------------------------------- 
+Participation Restrictions | If you are over the age of 19, you may participate in this research. 
+Time Commitment | Participation in this study should require less than 1 hour of your time. This estimate is based on the size of the investigator's tool collection. The study may take you more or less time depending on the size and organization of your tool collection. 
+Location | Wherever you store your tools.
+
+:::
+
+::: {.column  width="10%"}
+:::
+
+::: {.column width="30%"}
+
+**Procedures**
+
+- Assemble tools which may be used for cutting wires or prying two objects apart. 
+- Report descriptive information and measurements for each type of tool
+- (Optional) Provide some basic demographic information and information about your hobbies
+
+:::
+:::
+
+## Risks & Benefits
+
+::: columns
+
+::: {.column width="35%"}
+Personal:
+
+- There are no risks to you if you participate in this study. 
+- There are no material benefits for participating.    
+You will not be compensated for your participation in this study.
+
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="55%"}
+Society:
+
+Society will benefit from your participation in this study through increased understanding of how likely forensic toolmark examination methods are to contribute to the conviction of innocent individuals accused of a crime. 
+
+The investigator will post results from the study to [/r/DIY](https://reddit.com/r/DIY) once the investigation is complete. 
+:::
+:::
+
+
+
+## Privacy
+
+Reasonable steps will be taken to protect the privacy and the anonymity of your study data; however, in some circumstances we cannot guarantee absolute privacy and/or confidentiality. 
+
+We will take the following precautions with your data:
+
+- We will not collect any individually identifying information.
+- Study records will be stored electronically on university machines and backed up with version control software.
+- At the end of the study, the collected data will be published along with the research paper.
+
+
+## Contact Us
+
+If you have questions about this project, you may contact Susan Vanderplas at susan.vanderplas@unl.edu.
+
+If you have questions about your rights or complaints about the research, contact the UNL Institutional Review Board (IRB) at (402) 472-6965 or irb@unl.edu.
+
+## Consent
+
+You can decide not to be in this research study, or you can withdraw at any time before, during, or after the research begins for any reason. 
+Deciding not to be in this research study or deciding to withdraw will not affect your relationship with the investigator or the University of Nebraska-Lincoln. 
+You will not lose any benefits to which you are entitled. 
+
+You are voluntarily making a decision whether or not to participate in this research study. 
+By clicking on the I Agree button below, your consent to participate is implied. 
+You should print or save a copy of this page for your records. 

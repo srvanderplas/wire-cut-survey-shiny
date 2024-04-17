@@ -1,0 +1,5 @@
+[Survey] Is your tool collection criminally large?
+
+Hi, Reddit! I'm a statistician who works with forensic pattern comparison data to try to make the field more quantitative. I am currently interested in understanding how likely a false positive error is, if someone is relatively "handy" and has a few tools for hobbies, DIY activities, etc. To understand this risk, I'd like to know about the tools that you have laying around.
+
+If you are at least 19 years old, and are interested in this topic, please complete the survey [here](https://shiny.srvanderplas.com).

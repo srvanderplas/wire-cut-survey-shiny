@@ -86,6 +86,7 @@ We will take the following precautions with your data:
 - Study records will be stored electronically on university machines and backed up with version control software.
 - At the end of the study, the collected data will be published along with the research paper.
 
+This project is not collecting any Personal Information from you. While you are welcome to withdraw from participation in the research at any time, due to the responses being collected anonymously, it is impossible for investigators to remove individual data.
 
 ## Contact Us
 
